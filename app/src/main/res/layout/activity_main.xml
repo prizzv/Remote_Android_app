@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCA5090D"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="74dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="152dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:shadowColor="#FCA5090D"
+        android:text="ok"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:circularflow_defaultRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/volumeIncreaseImageButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="35dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/muteImageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/leftArrowImageButton"
+        app:srcCompat="@drawable/volume_increase"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/volumeDecreaseImageButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="8dp"
+        android:paddingLeft="20dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/backImageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volumeIncreaseImageButton"
+        app:srcCompat="@drawable/volume_decrease"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/upArrowImageButton"
+        android:layout_width="98dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="8dp"
+        android:rotation="180"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/okButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/down_arrow"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/downArrowImageButton"
+        android:layout_width="98dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/okButton"
+        app:srcCompat="@drawable/down_arrow"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/leftArrowImageButton"
+        android:layout_width="74dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="35dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="15dp"
+        android:rotation="180"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/okButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
+
+    <ImageButton
+        android:id="@+id/rightArrowImageButton"
+        android:layout_width="74dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="15dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/okButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
+
+    <ImageButton
+        android:id="@+id/backImageButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/muteImageButton"
+        app:srcCompat="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/channelDecreaseImageButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="53dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/channelIncreaseImageButton"
+        app:srcCompat="@drawable/channel_decrease" />
+
+    <ImageButton
+        android:id="@+id/powerImageButton"
+        android:layout_width="61dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="4dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/power" />
+
+    <LinearLayout
+        android:layout_width="406dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/editTextUserInput"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Text box must be open on TV"
+            android:inputType="textPersonName"
+            android:textColorHint="#C6BFBF"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/muteImageButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/downArrowImageButton"
+        app:srcCompat="@drawable/mute" />
+
+    <ImageButton
+        android:id="@+id/channelIncreaseImageButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="52dp"
+        android:backgroundTint="#FCA5090D"
+        android:hapticFeedbackEnabled="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/muteImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/rightArrowImageButton"
+        app:srcCompat="@drawable/channel_increase" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

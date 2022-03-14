@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Remote app</string>
+    <string name="choose_device">Select a Device</string>
+
+</resources>
