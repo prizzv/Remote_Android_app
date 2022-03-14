@@ -12,6 +12,7 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,7 +21,6 @@ import java.util.List;
 import com.practice.remoteapp.IrCodes.Samsung_Codes;
 
 public class MainActivity extends AppCompatActivity {
-
 
 //    private String TAG = "MainActivity";
 
@@ -34,32 +34,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         irManager = (ConsumerIrManager) getSystemService(CONSUMER_IR_SERVICE);
-        Log.d("Power", "@string/app_name");
 //        vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 //        mp = MediaPlayer.create(this, R.raw.beep);
 
-        Intent intent = new Intent();
-        int deviceNameNo = intent.getIntExtra("devicePosition", 0);
+        Intent intent = getIntent();
+        int deviceNameNo = intent.getIntExtra("devicePosition", -1);
+        Log.d("Position", "onItemClick: "+ deviceNameNo);
 
-        if(deviceNameNo == 1){
-            
-        }
-        findViewById(R.id.powerImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvPower())));
+        if(deviceNameNo == 0){      // Samsung Codes
+
+            findViewById(R.id.powerImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvPower())));
 //        findViewById(R.id.tvsource).setOnClickListener(new ClickListener(hex2ir(CMD_TV_SOURCE)));
-        findViewById(R.id.channelIncreaseImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_CH_NEXT)));
-        findViewById(R.id.channelDecreaseImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_CH_PREV)));
-        findViewById(R.id.backImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_BACK)));
-        findViewById(R.id.leftArrowImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_LEFT)));
-        findViewById(R.id.rightArrowImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_RIGHT)));
-        findViewById(R.id.okButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_ENTER)));
+            findViewById(R.id.channelIncreaseImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvChNext())));
+            findViewById(R.id.channelDecreaseImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvChPrev())));
+            findViewById(R.id.backImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvBack())));
+            findViewById(R.id.leftArrowImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvLeft())));
+            findViewById(R.id.rightArrowImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvRight())));
+            findViewById(R.id.okButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvEnter())));
 
-        findViewById(R.id.upArrowImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_UP)));
-        findViewById(R.id.downArrowImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_DOWN)));
-        findViewById(R.id.muteImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_TV_MUTE)));
+            findViewById(R.id.upArrowImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvUp())));
+            findViewById(R.id.downArrowImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvDown())));
+            findViewById(R.id.muteImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdTvMute())));
 
+            findViewById(R.id.volumeIncreaseImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdVolup())));
+            findViewById(R.id.volumeDecreaseImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdVoldown())));
+        }else if(deviceNameNo == 1){  // LG Codes
 
-        findViewById(R.id.volumeIncreaseImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_VOLUP)));
-        findViewById(R.id.volumeDecreaseImageButton).setOnClickListener(new ClickListener(hex2ir(CMD_VOLDOWN)));
+        }else if (deviceNameNo == -1){  // just to check the error
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private IRCommand hex2ir(final String irData){

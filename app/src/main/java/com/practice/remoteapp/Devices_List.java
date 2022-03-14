@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,11 +37,9 @@ public class Devices_List extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("devicePosition", position);
                 startActivity(intent);
+                Log.d("Position", "onItemClick: " + position);
             }
         });
-
-
-
 
     }
 }
