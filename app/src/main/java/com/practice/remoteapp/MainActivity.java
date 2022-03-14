@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.practice.remoteapp.IrCodes.LG_Codes;
 import com.practice.remoteapp.IrCodes.Samsung_Codes;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int deviceNameNo = intent.getIntExtra("devicePosition", -1);
-        Log.d("Position", "onItemClick: "+ deviceNameNo);
+        Log.d("Position", "onItemClick: " + deviceNameNo);
 
         if(deviceNameNo == 0){      // Samsung Codes
 
@@ -58,7 +59,23 @@ public class MainActivity extends AppCompatActivity {
 
             findViewById(R.id.volumeIncreaseImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdVolup())));
             findViewById(R.id.volumeDecreaseImageButton).setOnClickListener(new ClickListener(hex2ir(Samsung_Codes.getCmdVoldown())));
+
         }else if(deviceNameNo == 1){  // LG Codes
+            findViewById(R.id.powerImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvPower())));
+//        findViewById(R.id.tvsource).setOnClickListener(new ClickListener(hex2ir(CMD_TV_SOURCE)));
+            findViewById(R.id.channelIncreaseImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvChNext())));
+            findViewById(R.id.channelDecreaseImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvChPrev())));
+            findViewById(R.id.backImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvBack())));
+            findViewById(R.id.leftArrowImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvLeft())));
+            findViewById(R.id.rightArrowImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvRight())));
+            findViewById(R.id.okButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvEnter())));
+
+            findViewById(R.id.upArrowImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvUp())));
+            findViewById(R.id.downArrowImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvDown())));
+            findViewById(R.id.muteImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdTvMute())));
+
+            findViewById(R.id.volumeIncreaseImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdVolup())));
+            findViewById(R.id.volumeDecreaseImageButton).setOnClickListener(new ClickListener(hex2ir(LG_Codes.getCmdVoldown())));
 
         }else if (deviceNameNo == -1){  // just to check the error
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
