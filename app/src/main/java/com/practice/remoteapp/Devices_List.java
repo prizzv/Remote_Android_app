@@ -18,17 +18,33 @@ public class Devices_List extends AppCompatActivity {
         setContentView(R.layout.activity_devices_list);
 
         tvImageButton = findViewById(R.id.tvImageButton);
-        acImageButton = findViewById(R.id.tvImageButton);
+        acImageButton = findViewById(R.id.acImageButton);
 
 
         tvImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Tv_List.class);
+                Intent intent = new Intent(getApplicationContext(), Appliances_List.class);
                 startActivity(intent);
                 Log.d("Intent", "Tv activity started");
             }
         });
+
+        acImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+
+    }
+    public void nextActivity(View view){
+
+        Intent intent = new Intent(getApplicationContext(), Appliances_List.class);
+        startActivity(intent);
+        Log.d("Intent", "Tv activity started");
     }
 
 }

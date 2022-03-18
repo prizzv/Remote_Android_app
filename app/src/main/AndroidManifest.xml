@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RemoteApp">
         <activity
-            android:name=".Tv_List"
+            android:name=".Appliances_List"
             android:exported="true">
 
         </activity>

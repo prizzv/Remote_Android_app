@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class Tv_List extends AppCompatActivity {
+public class Appliances_List extends AppCompatActivity {
 
     ListView devicesListView;
     ArrayList<String> deviceName = new ArrayList<String>();
@@ -20,7 +20,7 @@ public class Tv_List extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tv_list);
+        setContentView(R.layout.activity_appliances_list);
 
         devicesListView = findViewById(R.id.devices_List_View);
         deviceName.add("Samsung Tv");
@@ -39,6 +39,5 @@ public class Tv_List extends AppCompatActivity {
                 Log.d("Position", "onItemClick: " + position);
             }
         });
-
     }
 }
