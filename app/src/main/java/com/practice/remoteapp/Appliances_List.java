@@ -23,8 +23,31 @@ public class Appliances_List extends AppCompatActivity {
         setContentView(R.layout.activity_appliances_list);
 
         devicesListView = findViewById(R.id.devices_List_View);
-        deviceName.add("Samsung Tv");
-        deviceName.add("LG Tv");
+        Intent intentNo = getIntent();
+        int tagNo = intentNo.getIntExtra("activityTag", -1);
+
+        if(tagNo == 1){
+            deviceName.add("Samsung Tv");
+            deviceName.add("LG Tv");
+
+            Class<MainActivity> activityClass = MainActivity.class;
+
+            devicesListOnClick(activityClass);
+
+        }else if(tagNo == 2){
+            deviceName.add("Mitsubishi");
+
+            Class<AC_Activity> activityClass = AC_Activity.class;
+
+            devicesListOnClick(activityClass);
+
+        }else{
+            Log.d("Error", "onCreate: ");
+
+        }
+    }
+
+    public void devicesListOnClick(Class xyz){
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, deviceName);
         devicesListView.setAdapter(arrayAdapter);
@@ -33,11 +56,13 @@ public class Appliances_List extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplication(), xyz);
                 intent.putExtra("devicePosition", position);
-                startActivity(intent);
+
                 Log.d("Position", "onItemClick: " + position);
+                startActivity(intent);
             }
         });
+
     }
 }

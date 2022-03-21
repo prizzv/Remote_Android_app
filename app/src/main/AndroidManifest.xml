@@ -12,29 +12,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RemoteApp">
+
+        <activity
+            android:name=".AC_Activity"
+            android:exported="false">
+        </activity>
+
         <activity
             android:name=".Appliances_List"
             android:exported="true">
-
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
         </activity>
+
         <activity
             android:name=".Devices_List"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>
