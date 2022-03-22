@@ -1,9 +1,12 @@
 package com.practice.remoteapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.ConsumerIrManager;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -11,6 +14,9 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -144,4 +150,5 @@ public class MainActivity extends AppCompatActivity {
             this.pattern = pattern;
         }
     }
+
 }
