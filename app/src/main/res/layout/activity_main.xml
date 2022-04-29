@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="61dp"
         android:layout_marginTop="152dp"
-
+        android:backgroundTint="@color/mainBackground"
         android:hapticFeedbackEnabled="true"
         android:text="ok"
         android:textColor="@color/mainText"
