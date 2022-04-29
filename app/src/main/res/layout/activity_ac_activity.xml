@@ -7,8 +7,59 @@
     android:background="@color/mainBackground"
     tools:context=".AC_Activity">
 
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout2"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/mainBackground"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/fanSpeedIncreaseButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/mainBackground"
+            android:text="+"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="257dp"
+            android:layout_height="45dp"
+            android:text="Fan Speed"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="24sp"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/fanSpeedDecreaseButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/mainBackground"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_column="3"
+            app:layout_row="0" />
+    </androidx.gridlayout.widget.GridLayout>
+
     <ImageButton
-        android:id="@+id/powerImageButton2"
+        android:id="@+id/acPowerImageButton"
         android:layout_width="61dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -20,4 +71,110 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/power" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout5"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/mainBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/tempIncreaseButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/mainBackground"
+            android:text="+"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="257dp"
+            android:layout_height="45dp"
+            android:text="Temperature"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="24sp"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <Button
+            android:id="@+id/tempDecreaseButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:backgroundTint="@color/mainBackground"
+            android:text="-"
+            android:textAlignment="center"
+            android:textColor="@color/mainText"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_column="3"
+            app:layout_row="0" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <Button
+        android:id="@+id/autoCoolButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/mainBackground"
+        android:hapticFeedbackEnabled="true"
+        android:padding="0dp"
+        android:text="Cool Mode"
+        android:textAllCaps="false"
+        android:textColor="@color/mainText"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/channel_increase" />
+
+    <Button
+        android:id="@+id/dryModeButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/mainBackground"
+        android:hapticFeedbackEnabled="true"
+        android:padding="0dp"
+        android:text="Dry Mode"
+        android:textAllCaps="false"
+        android:textColor="@color/mainText"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/autoCoolButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/channel_increase" />
+
+    <Button
+        android:id="@+id/fanAutoButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+
+        android:layout_marginStart="50dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/mainBackground"
+        android:hapticFeedbackEnabled="true"
+        android:padding="0dp"
+        android:text="Fan Auto"
+        android:textAllCaps="false"
+        android:textColor="@color/mainText"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/channel_increase" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
